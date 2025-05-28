@@ -2,11 +2,11 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: ICLR Blogposts 2025 # the website title (if blank, full name will be used instead)
-first_name: ICLR
-middle_name: 
+title: effecient # the website title (if blank, full name will be used instead)
+first_name: My
+middle_name: Blog
 last_name: Blog
-email: 
+email: qwg724@postech.ac.kr
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Home to the 2025 ICLR Blogposts track
 footer_text: >
@@ -18,7 +18,7 @@ keywords: machine-learning, ml, deep-learning, reinforcement-learning, iclr  # a
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: iclr_favicon.ico  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
-url: https://iclr-blogposts.github.io # the base hostname & protocol for your site
+url: https://20190511.github.io # the base hostname & protocol for your site
 baseurl: /2025 # the subpath of your site, e.g. /blog/
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path:  # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
