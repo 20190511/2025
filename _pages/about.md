@@ -17,7 +17,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
 # Our Introducement
-Sungwook Gang and Junhyeong Bae are master's students conducting research at the Parallel System Architecture Laboratory (PSAL). Their work focuses on accelerator optimization and networking for high-performance computing (HPC) systems, particularly in data centers handling large-scale data processing workloads such as LLM serving.
+Sungwook Kang and Junhyeong Bae are master's students conducting research at the Parallel System Architecture Laboratory (PSAL). Their work focuses on accelerator optimization and networking for high-performance computing (HPC) systems, particularly in data centers handling large-scale data processing workloads such as LLM serving.
 
 # Our Blogs
 [Optimizing Deep Learning Model Serving On Large-Scale Servers​](https://20190511.github.io/2025/blog/Final)
