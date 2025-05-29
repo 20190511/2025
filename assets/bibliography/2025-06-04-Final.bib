@@ -1,0 +1,294 @@
+@inproceedings{OmNICCL,
+author = {Gu, Tongzhou and Fei, Jiawei and Canini, Marco},
+title = {OmNICCL: Zero-cost Sparse AllReduce with Direct Cache Access and SmartNICs},
+year = {2024},
+isbn = {9798400707131},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3672198.3673804},
+doi = {10.1145/3672198.3673804},
+abstract = {AllReduce is a collective communication pattern commonly used in Distributed Deep Learning (DDL) and High Performance Computing (HPC). Sparse AllReduce, which compresses the data transmitted, achieves significant acceleration on specific workloads. However, compression introduces a non-negligible performance overhead. Therefore, we propose the OmNICreduce algorithm, an efficient inter-node sparse AllReduce method, as well as its implementation, OmNICCL. It utilizes Direct Cache Access (DCA) to achieve zero-overhead lossless compression and employs SmartNICs for aggregation on the data plane. We demonstrate that our method can provide up to a 7.24\texttimes{} speedup over conventional dense AllReduce methods under a 100Gbps RoCEv2 network and 1.76-17.37\texttimes{} performance improvement over state-of-the-art implementations when performing sparse AllReduce.},
+booktitle = {Proceedings of the 2024 SIGCOMM Workshop on Networks for AI Computing},
+pages = {75–83},
+numpages = {9},
+keywords = {Collective Communication, DCA, DPU, In-Network Aggregation, SmartNIC},
+location = {Sydney, NSW, Australia},
+series = {NAIC '24}
+}
+
+@inproceedings{OmniReduce,
+author = {Fei, Jiawei and Ho, Chen-Yu and Sahu, Atal N. and Canini, Marco and Sapio, Amedeo},
+title = {Efficient sparse collective communication and its application to accelerate distributed deep learning},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472904},
+doi = {10.1145/3452296.3472904},
+abstract = {Efficient collective communication is crucial to parallel-computing applications such as distributed training of large-scale recommendation systems and natural language processing models. Existing collective communication libraries focus on optimizing operations for dense inputs, resulting in transmissions of many zeros when inputs are sparse. This counters current trends that see increasing data sparsity in large models.We propose OmniReduce, an efficient streaming aggregation system that exploits sparsity to maximize effective bandwidth use by sending only non-zero data blocks. We demonstrate that this idea is beneficial and accelerates distributed training by up to 8.2x. Even at 100 Gbps, OmniReduce delivers 1.4--2.9x better performance for network-bottlenecked DNNs.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {676–691},
+numpages = {16},
+keywords = {deep learning, distributed training},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@INPROCEEDINGS{DirectReduce,
+  author={Hui, Lihuan and Yang, Wang and Wang, Yanbo},
+  booktitle={2024 IEEE International Symposium on Parallel and Distributed Processing with Applications (ISPA)}, 
+  title={Leveraging SmartNIC for Ring AllReduce Offloading}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={173-180},
+  keywords={Systematics;Protocols;Distance learning;Simulation;Message passing;Logic gates;Parallel processing;Topology;Optimization;Engines;Ring All-Reduce;SmartNIC;In-Network Aggregation;collective communication},
+  doi={10.1109/ISPA63168.2024.00030}
+}
+
+@ARTICLE{FPGANIC,
+  author={Ma, Rui and Georganas, Evangelos and Heinecke, Alexander and Gribok, Sergey and Boutros, Andrew and Nurvitadhi, Eriko},
+  journal={IEEE Computer Architecture Letters}, 
+  title={FPGA-Based AI Smart NICs for Scalable Distributed AI Training Systems}, 
+  year={2022},
+  volume={21},
+  number={2},
+  pages={49-52},
+  keywords={Training;Artificial intelligence;Field programmable gate arrays;Tensors;Computational modeling;Bandwidth;Scalability;AI training;all-reduce;smart NIC;FPGA},
+  doi={10.1109/LCA.2022.3189207}}
+
+
+@inproceedings{OffPath,
+  title={Characterizing off-path $\{$SmartNIC$\}$ for accelerating distributed systems},
+  author={Wei, Xingda and Cheng, Rongxin and Yang, Yuhan and Chen, Rong and Chen, Haibo},
+  booktitle={17th USENIX Symposium on Operating Systems Design and Implementation (OSDI 23)},
+  pages={987--1004},
+  year={2023}
+}
+
+@inproceedings{OptimusNIC,
+  title={OptimusNIC: Offloading Optimizer State to SmartNICs for Efficient Large-Scale AI Training},
+  author={Rebai, Achref and Canini, Marco},
+  booktitle={Proceedings of the 5th Workshop on Machine Learning and Systems},
+  pages={176--182},
+  year={2025}
+}
+
+@inproceedings{LineFS,
+author = {Kim, Jongyul and Jang, Insu and Reda, Waleed and Im, Jaeseong and Canini, Marco and Kosti\'{c}, Dejan and Kwon, Youngjin and Peter, Simon and Witchel, Emmett},
+title = {LineFS: Efficient SmartNIC Offload of a Distributed File System with Pipeline Parallelism},
+year = {2021},
+isbn = {9781450387095},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3477132.3483565},
+doi = {10.1145/3477132.3483565},
+abstract = {In multi-tenant systems, the CPU overhead of distributed file systems (DFSes) is increasingly a burden to application performance. CPU and memory interference cause degraded and unstable application and storage performance, in particular for operation latency. Recent client-local DFSes for persistent memory (PM) accelerate this trend. DFS offload to SmartNICs is a promising solution to these problems, but it is challenging to fit the complex demands of a DFS onto simple SmartNIC processors located across PCIe.We present LineFS, a SmartNIC-offloaded, high-performance DFS with support for client-local PM. To fully leverage the SmartNIC architecture, we decompose DFS operations into execution stages that can be offloaded to a parallel datapath execution pipeline on the SmartNIC. LineFS offloads CPU-intensive DFS tasks, like replication, compression, data publication, index and consistency management to a Smart-NIC. We implement LineFS on the Mellanox BlueField Smart-NIC and compare it to Assise, a state-of-the-art PM DFS. LineFS improves latency in LevelDB up to 80\% and throughput in Filebench up to 79\%, while providing extended DFS availability during host system failures.},
+booktitle = {Proceedings of the ACM SIGOPS 28th Symposium on Operating Systems Principles},
+pages = {756–771},
+numpages = {16},
+keywords = {SmartNIC offload, Distributed file system},
+location = {Virtual Event, Germany},
+series = {SOSP '21}
+}
+
+@INPROCEEDINGS{AstraSim2,
+  author={Won, William and Heo, Taekyung and Rashidi, Saeed and Sridharan, Srinivas and Srinivasan, Sudarshan and Krishna, Tushar},
+  booktitle={2023 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS)}, 
+  title={ASTRA-sim2.0: Modeling Hierarchical Networks and Disaggregated Systems for Large-model Training at Scale}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={283-294},
+  keywords={Training;Semiconductor device modeling;Analytical models;Network topology;Systems modeling;Throughput;Data models;Distributed training;High-performance training;Multi-dimensional network;Disaggregated memory system},
+  doi={10.1109/ISPASS57527.2023.00035}}
+
+@inproceedings{SqueezeNIC,
+author = {Rebai, Achref and Ojewale, Mubarak Adetunji and Ullah, Anees and Canini, Marco and Fahmy, Suhaib A.},
+title = {SqueezeNIC: Low-Latency In-NIC Compression for Distributed Deep Learning},
+year = {2024},
+isbn = {9798400707131},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3672198.3673801},
+doi = {10.1145/3672198.3673801},
+abstract = {To alleviate the communication bottleneck of distributed deep learning training, several data compression algorithms have been proposed. However, these algorithms introduce computational overhead and resource allocation concerns on CPUs and GPUs. In this paper, we introduce SqueezeNIC, an FPGA-based Network Interface Card (NIC) that offloads communication compression from CPUs/GPUs, bridging a high bandwidth intra-node network with a high bandwidth inter-node network. It enables better overlap of gradient communication and computation to further reduce training time per iteration in distributed training. Our evaluations shows that SqueezeNIC achieves line rate compression and can speed up training by up to a factor of 1.21\texttimes{}, compared to baseline approaches.},
+booktitle = {Proceedings of the 2024 SIGCOMM Workshop on Networks for AI Computing},
+pages = {61–68},
+numpages = {8},
+keywords = {Distributed Training, FPGA, In-Network Compression},
+location = {Sydney, NSW, Australia},
+series = {NAIC '24}
+}
+
+
+@misc{bluefield2,
+  author       = {{NVIDIA}},
+  title        = {NVIDIA BlueField-2 DPU},
+  year         = {2023},
+  url          = {https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/documents/datasheet-nvidia-bluefield-2-dpu.pdf},
+  note         = {Datasheet, Accessed: 2025-05-22}
+}
+
+@misc{denneman2020multiGPU,
+  author       = {Frank Denneman},
+  title        = {Multi-GPU and Distributed Deep Learning},
+  year         = {2020},
+  url          = {https://frankdenneman.nl/2020/02/19/multi-gpu-and-distributed-deep-learning/},
+  note         = {Accessed: 2025-05-24}
+}
+
+@misc{wikiCollectiveOp,
+  title = {Collective operation},
+  url = {https://en.wikipedia.org/wiki/Collective_operation},
+  note = {Accessed: 2025-05-24}
+}
+
+@inproceedings{attacc,
+author = {Park, Jaehyun and Choi, Jaewan and Kyung, Kwanhee and Kim, Michael Jaemin and Kwon, Yongsuk and Kim, Nam Sung and Ahn, Jung Ho},
+title = {AttAcc! Unleashing the Power of PIM for Batched Transformer-based Generative Model Inference},
+year = {2024},
+isbn = {9798400703850},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3620665.3640422},
+doi = {10.1145/3620665.3640422},
+abstract = {The Transformer-based generative model (TbGM), comprising summarization (Sum) and generation (Gen) stages, has demonstrated unprecedented generative performance across a wide range of applications. However, it also demands immense amounts of compute and memory resources. Especially, the Gen stages, consisting of the attention and fully-connected (FC) layers, dominate the overall execution time. Meanwhile, we reveal that the conventional system with GPUs used for TbGM inference cannot efficiently execute the attention layer, even with batching, due to various constraints. To address this inefficiency, we first propose AttAcc, a processing-in-memory (PIM) architecture for efficient execution of the attention layer. Subsequently, for the end-to-end acceleration of TbGM inference, we propose a novel heterogeneous system architecture and optimizations that strategically use xPU and PIM together. It leverages the high memory bandwidth of AttAcc for the attention layer and the powerful compute capability of the conventional system for the FC layer. Lastly, we demonstrate that our GPU-PIM system outperforms the conventional system with the same memory capacity, improving performance and energy efficiency of running a 175B TbGM by up to 2.81\texttimes{} and 2.67\texttimes{}, respectively.},
+booktitle = {Proceedings of the 29th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 2},
+pages = {103–119},
+numpages = {17},
+keywords = {processing-in-memory, transformer-based generative model, DRAM},
+location = {La Jolla, CA, USA},
+series = {ASPLOS '24}
+}
+ 
+@inproceedings{neupims,
+author = {Heo, Guseul and Lee, Sangyeop and Cho, Jaehong and Choi, Hyunmin and Lee, Sanghyeon and Ham, Hyungkyu and Kim, Gwangsun and Mahajan, Divya and Park, Jongse},
+title = {NeuPIMs: NPU-PIM Heterogeneous Acceleration for Batched LLM Inferencing},
+year = {2024},
+isbn = {9798400703867},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3620666.3651380},
+doi = {10.1145/3620666.3651380},
+abstract = {Modern transformer-based Large Language Models (LLMs) are constructed with a series of decoder blocks. Each block comprises three key components: (1) QKV generation, (2) multi-head attention, and (3) feed-forward networks. In batched processing, QKV generation and feed-forward networks involve compute-intensive matrix-matrix multiplications (GEMM), while multi-head attention requires bandwidth-heavy matrix-vector multiplications (GEMV). Machine learning accelerators like TPUs or NPUs are proficient in handling GEMM but are less efficient for GEMV computations. Conversely, Processing-in-Memory (PIM) technology is tailored for efficient GEMV computation, while it lacks the computational power to handle GEMM effectively.Inspired by this insight, we propose NeuPIMs, a heterogeneous acceleration system that jointly exploits a conventional GEMM-focused NPU and GEMV-optimized PIM devices. The main challenge in efficiently integrating NPU and PIM lies in enabling concurrent operations on both platforms, each addressing a specific kernel type. First, existing PIMs typically operate in a "blocked" mode, allowing only either NPU or PIM to be active at any given time. Second, the inherent dependencies between GEMM and GEMV in LLMs restrict their parallel processing. To tackle these challenges, NeuPIMs is equipped with dual row buffers in each bank, facilitating the simultaneous management of memory read/write operations and PIM commands. Further, NeuPIMs employs a runtime sub-batch interleaving technique to maximize concurrent execution, leveraging batch parallelism to allow two independent sub-batches to be pipelined within a single NeuPIMs device. Our evaluation demonstrates that compared to GPU-only, NPU-only, and a na\"{\i}ve NPU+PIM integrated acceleration approaches, NeuPIMs achieves 3\texttimes{}, 2.4\texttimes{} and 1.6\texttimes{} throughput improvement, respectively.},
+booktitle = {Proceedings of the 29th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 3},
+pages = {722–737},
+numpages = {16},
+keywords = {processing-in-memory (PIM), neural processing unit (NPU), heterogeneous system, large language model (LLM), inference serving, transformer-based generative model (GPT)},
+location = {La Jolla, CA, USA},
+series = {ASPLOS '24}
+}
+ 
+@inproceedings{PIMIsAllYouNeed,
+author = {Gu, Yufeng and Khadem, Alireza and Umesh, Sumanth and Liang, Ning and Servot, Xavier and Mutlu, Onur and Iyer, Ravi and Das, Reetuparna},
+title = {PIM Is All You Need: A CXL-Enabled GPU-Free System for Large Language Model Inference},
+year = {2025},
+isbn = {9798400710797},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3676641.3716267},
+doi = {10.1145/3676641.3716267},
+abstract = {Large Language Model (LLM) inference uses an autoregressive manner to generate one token at a time, which exhibits notably lower operational intensity compared to earlier Machine Learning (ML) models such as encoder-only transformers and Convolutional Neural Networks. At the same time, LLMs possess large parameter sizes and use key-value caches to store context information. Modern LLMs support context windows with up to 1 million tokens to generate versatile text, audio, and video content. A large key-value cache unique to each prompt requires a large memory capacity, limiting the inference batch size. Both low operational intensity and limited batch size necessitate a high memory bandwidth. However, contemporary hardware systems for ML model deployment, such as GPUs and TPUs, are primarily optimized for compute throughput. This mismatch challenges the efficient deployment of advanced LLMs and makes users to pay for expensive compute resources that are poorly utilized for the memory-bound LLM inference tasks.We propose CENT, a CXL-ENabled GPU-Free sysTem for LLM inference, which harnesses CXL memory expansion capabilities to accommodate substantial LLM sizes, and utilizes near-bank processing units to deliver high memory bandwidth, eliminating the need for expensive GPUs. CENT exploits a scalable CXL network to support peer-to-peer and collective communication primitives across CXL devices. We implement various parallelism strategies to distribute LLMs across these devices. Compared to GPU baselines with maximum supported batch sizes and similar average power, CENT achieves 2.3x higher throughput and consumes 2.3x less energy. CENT reduces the Total Cost of Ownership (TCO), generating 5.2x more tokens per dollar than GPUs.},
+booktitle = {Proceedings of the 30th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 2},
+pages = {862–881},
+numpages = {20},
+keywords = {compute express link, computer architecture, generative artificial intelligence, large language models, processing-in-memory},
+location = {Rotterdam, Netherlands},
+series = {ASPLOS '25}
+}
+ 
+@inproceedings{AttenIsAllYouNeed,
+author = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N. and Kaiser, \L{}ukasz and Polosukhin, Illia},
+title = {Attention is all you need},
+year = {2017},
+isbn = {9781510860964},
+publisher = {Curran Associates Inc.},
+address = {Red Hook, NY, USA},
+abstract = {The dominant sequence transduction models are based on complex recurrent or convolutional neural networks that include an encoder and a decoder. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles, by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.0 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature.},
+booktitle = {Proceedings of the 31st International Conference on Neural Information Processing Systems},
+pages = {6000–6010},
+numpages = {11},
+location = {Long Beach, California, USA},
+series = {NIPS'17}
+}
+ 
+@ARTICLE{LPDDR5PIM,
+  author={Kim, Jin Hyun and Kang, Shin-Haeng and Lee, Sukhan and Kim, Hyeonsu and Ro, Yuhwan and Lee, Seungwon and Wang, David and Choi, Jihyun and So, Jinin and Cho, YeonGon and Song, JoonHo and Cho, Jeonghyeon and Sohn, Kyomin and Kim, Nam Sung},
+  journal={IEEE Micro},
+  title={Aquabolt-XL HBM2-PIM, LPDDR5-PIM With In-Memory Processing, and AXDIMM With Acceleration Buffer},
+  year={2022},
+  volume={42},
+  number={3},
+  pages={20-30},
+  keywords={Bandwidth;Random access memory;Memory;Performance evaluation;Registers;Power demand;Codes;PIM;Processing-In-Memory;HBM2;LPDDR5},
+  doi={10.1109/MM.2022.3164651}
+  }
+ 
+@article{NDP,
+author = {Vin\c{c}on, Tobias and Kn\"{o}dler, Christian and Solis-Vasquez, Leonardo and Bernhardt, Arthur and Tamimi, Sajjad and Weber, Lukas and Stock, Florian and Koch, Andreas and Petrov, Ilia},
+title = {Near-data processing in database systems on native computational storage under HTAP workloads},
+year = {2022},
+issue_date = {June 2022},
+publisher = {VLDB Endowment},
+volume = {15},
+number = {10},
+issn = {2150-8097},
+url = {https://doi.org/10.14778/3547305.3547307},
+doi = {10.14778/3547305.3547307},
+abstract = {Today's Hybrid Transactional and Analytical Processing (HTAP) systems, tackle the ever-growing data in combination with a mixture of transactional and analytical workloads. While optimizing for aspects such as data freshness and performance isolation, they build on the traditional data-to-code principle and may trigger massive cold data transfers that impair the overall performance and scalability. Firstly, in this paper we show that Near-Data Processing (NDP) naturally fits in the HTAP design space. Secondly, we propose an NDP database architecture, allowing transactionally consistent in-situ executions of analytical operations in HTAP settings. We evaluate the proposed architecture in state-of-the-art key/value-stores and multi-versioned DBMS. In contrast to traditional setups, our approach yields robust, resource- and cost-efficient performance.},
+journal = {Proc. VLDB Endow.},
+month = jun,
+pages = {1991–2004},
+numpages = {14}
+}
+ 
+@INPROCEEDINGS{HBM-PIM,
+  author={Lee, Sukhan and Kang, Shin-haeng and Lee, Jaehoon and Kim, Hyeonsu and Lee, Eojin and Seo, Seungwoo and Yoon, Hosang and Lee, Seungwon and Lim, Kyounghwan and Shin, Hyunsung and Kim, Jinhyun and Seongil, O and Iyer, Anand and Wang, David and Sohn, Kyomin and Kim, Nam Sung},
+  booktitle={2021 ACM/IEEE 48th Annual International Symposium on Computer Architecture (ISCA)},
+  title={Hardware Architecture and Software Stack for PIM Based on Commercial DRAM Technology : Industrial Product},
+  year={2021},
+  volume={},
+  number={},
+  pages={43-56},
+  keywords={Program processors;Neural networks;Memory management;Random access memory;Bandwidth;Software;Energy efficiency;processing in memory;neural network;accelerator;DRAM},
+  doi={10.1109/ISCA52012.2021.00013}
+}
+ 
+@misc{Llama3,
+      title={The Llama 3 Herd of Models},
+      author={Aaron Grattafiori and Abhimanyu Dubey and Abhinav Jauhri and Abhinav Pandey and Abhishek Kadian and Ahmad Al-Dahle and Aiesha Letman and Akhil Mathur and Alan Schelten and Alex Vaughan and Amy Yang and Angela Fan and Anirudh Goyal and Anthony Hartshorn and Aobo Yang and Archi Mitra and Archie Sravankumar and Artem Korenev and Arthur Hinsvark and Arun Rao and Aston Zhang and Aurelien Rodriguez and Austen Gregerson and Ava Spataru and Baptiste Roziere and Bethany Biron and Binh Tang and Bobbie Chern and Charlotte Caucheteux and Chaya Nayak and Chloe Bi and Chris Marra and Chris McConnell and Christian Keller and Christophe Touret and Chunyang Wu and Corinne Wong and Cristian Canton Ferrer and Cyrus Nikolaidis and Damien Allonsius and Daniel Song and Danielle Pintz and Danny Livshits and Danny Wyatt and David Esiobu and Dhruv Choudhary and Dhruv Mahajan and Diego Garcia-Olano and Diego Perino and Dieuwke Hupkes and Egor Lakomkin and Ehab AlBadawy and Elina Lobanova and Emily Dinan and Eric Michael Smith and Filip Radenovic and Francisco Guzmán and Frank Zhang and Gabriel Synnaeve and Gabrielle Lee and Georgia Lewis Anderson and Govind Thattai and Graeme Nail and Gregoire Mialon and Guan Pang and Guillem Cucurell and Hailey Nguyen and Hannah Korevaar and Hu Xu and Hugo Touvron and Iliyan Zarov and Imanol Arrieta Ibarra and Isabel Kloumann and Ishan Misra and Ivan Evtimov and Jack Zhang and Jade Copet and Jaewon Lee and Jan Geffert and Jana Vranes and Jason Park and Jay Mahadeokar and Jeet Shah and Jelmer van der Linde and Jennifer Billock and Jenny Hong and Jenya Lee and Jeremy Fu and Jianfeng Chi and Jianyu Huang and Jiawen Liu and Jie Wang and Jiecao Yu and Joanna Bitton and Joe Spisak and Jongsoo Park and Joseph Rocca and Joshua Johnstun and Joshua Saxe and Junteng Jia and Kalyan Vasuden Alwala and Karthik Prasad and Kartikeya Upasani and Kate Plawiak and Ke Li and Kenneth Heafield and Kevin Stone and Khalid El-Arini and Krithika Iyer and Kshitiz Malik and Kuenley Chiu and Kunal Bhalla and Kushal Lakhotia and Lauren Rantala-Yeary and Laurens van der Maaten and Lawrence Chen and Liang Tan and Liz Jenkins and Louis Martin and Lovish Madaan and Lubo Malo and Lukas Blecher and Lukas Landzaat and Luke de Oliveira and Madeline Muzzi and Mahesh Pasupuleti and Mannat Singh and Manohar Paluri and Marcin Kardas and Maria Tsimpoukelli and Mathew Oldham and Mathieu Rita and Maya Pavlova and Melanie Kambadur and Mike Lewis and Min Si and Mitesh Kumar Singh and Mona Hassan and Naman Goyal and Narjes Torabi and Nikolay Bashlykov and Nikolay Bogoychev and Niladri Chatterji and Ning Zhang and Olivier Duchenne and Onur Çelebi and Patrick Alrassy and Pengchuan Zhang and Pengwei Li and Petar Vasic and Peter Weng and Prajjwal Bhargava and Pratik Dubal and Praveen Krishnan and Punit Singh Koura and Puxin Xu and Qing He and Qingxiao Dong and Ragavan Srinivasan and Raj Ganapathy and Ramon Calderer and Ricardo Silveira Cabral and Robert Stojnic and Roberta Raileanu and Rohan Maheswari and Rohit Girdhar and Rohit Patel and Romain Sauvestre and Ronnie Polidoro and Roshan Sumbaly and Ross Taylor and Ruan Silva and Rui Hou and Rui Wang and Saghar Hosseini and Sahana Chennabasappa and Sanjay Singh and Sean Bell and Seohyun Sonia Kim and Sergey Edunov and Shaoliang Nie and Sharan Narang and Sharath Raparthy and Sheng Shen and Shengye Wan and Shruti Bhosale and Shun Zhang and Simon Vandenhende and Soumya Batra and Spencer Whitman and Sten Sootla and Stephane Collot and Suchin Gururangan and Sydney Borodinsky and Tamar Herman and Tara Fowler and Tarek Sheasha and Thomas Georgiou and Thomas Scialom and Tobias Speckbacher and Todor Mihaylov and Tong Xiao and Ujjwal Karn and Vedanuj Goswami and Vibhor Gupta and Vignesh Ramanathan and Viktor Kerkez and Vincent Gonguet and Virginie Do and Vish Vogeti and Vítor Albiero and Vladan Petrovic and Weiwei Chu and Wenhan Xiong and Wenyin Fu and Whitney Meers and Xavier Martinet and Xiaodong Wang and Xiaofang Wang and Xiaoqing Ellen Tan and Xide Xia and Xinfeng Xie and Xuchao Jia and Xuewei Wang and Yaelle Goldschlag and Yashesh Gaur and Yasmine Babaei and Yi Wen and Yiwen Song and Yuchen Zhang and Yue Li and Yuning Mao and Zacharie Delpierre Coudert and Zheng Yan and Zhengxing Chen and Zoe Papakipos and Aaditya Singh and Aayushi Srivastava and Abha Jain and Adam Kelsey and Adam Shajnfeld and Adithya Gangidi and Adolfo Victoria and Ahuva Goldstand and Ajay Menon and Ajay Sharma and Alex Boesenberg and Alexei Baevski and Allie Feinstein and Amanda Kallet and Amit Sangani and Amos Teo and Anam Yunus and Andrei Lupu and Andres Alvarado and Andrew Caples and Andrew Gu and Andrew Ho and Andrew Poulton and Andrew Ryan and Ankit Ramchandani and Annie Dong and Annie Franco and Anuj Goyal and Aparajita Saraf and Arkabandhu Chowdhury and Ashley Gabriel and Ashwin Bharambe and Assaf Eisenman and Azadeh Yazdan and Beau James and Ben Maurer and Benjamin Leonhardi and Bernie Huang and Beth Loyd and Beto De Paola and Bhargavi Paranjape and Bing Liu and Bo Wu and Boyu Ni and Braden Hancock and Bram Wasti and Brandon Spence and Brani Stojkovic and Brian Gamido and Britt Montalvo and Carl Parker and Carly Burton and Catalina Mejia and Ce Liu and Changhan Wang and Changkyu Kim and Chao Zhou and Chester Hu and Ching-Hsiang Chu and Chris Cai and Chris Tindal and Christoph Feichtenhofer and Cynthia Gao and Damon Civin and Dana Beaty and Daniel Kreymer and Daniel Li and David Adkins and David Xu and Davide Testuggine and Delia David and Devi Parikh and Diana Liskovich and Didem Foss and Dingkang Wang and Duc Le and Dustin Holland and Edward Dowling and Eissa Jamil and Elaine Montgomery and Eleonora Presani and Emily Hahn and Emily Wood and Eric-Tuan Le and Erik Brinkman and Esteban Arcaute and Evan Dunbar and Evan Smothers and Fei Sun and Felix Kreuk and Feng Tian and Filippos Kokkinos and Firat Ozgenel and Francesco Caggioni and Frank Kanayet and Frank Seide and Gabriela Medina Florez and Gabriella Schwarz and Gada Badeer and Georgia Swee and Gil Halpern and Grant Herman and Grigory Sizov and Guangyi and Zhang and Guna Lakshminarayanan and Hakan Inan and Hamid Shojanazeri and Han Zou and Hannah Wang and Hanwen Zha and Haroun Habeeb and Harrison Rudolph and Helen Suk and Henry Aspegren and Hunter Goldman and Hongyuan Zhan and Ibrahim Damlaj and Igor Molybog and Igor Tufanov and Ilias Leontiadis and Irina-Elena Veliche and Itai Gat and Jake Weissman and James Geboski and James Kohli and Janice Lam and Japhet Asher and Jean-Baptiste Gaya and Jeff Marcus and Jeff Tang and Jennifer Chan and Jenny Zhen and Jeremy Reizenstein and Jeremy Teboul and Jessica Zhong and Jian Jin and Jingyi Yang and Joe Cummings and Jon Carvill and Jon Shepard and Jonathan McPhie and Jonathan Torres and Josh Ginsburg and Junjie Wang and Kai Wu and Kam Hou U and Karan Saxena and Kartikay Khandelwal and Katayoun Zand and Kathy Matosich and Kaushik Veeraraghavan and Kelly Michelena and Keqian Li and Kiran Jagadeesh and Kun Huang and Kunal Chawla and Kyle Huang and Lailin Chen and Lakshya Garg and Lavender A and Leandro Silva and Lee Bell and Lei Zhang and Liangpeng Guo and Licheng Yu and Liron Moshkovich and Luca Wehrstedt and Madian Khabsa and Manav Avalani and Manish Bhatt and Martynas Mankus and Matan Hasson and Matthew Lennie and Matthias Reso and Maxim Groshev and Maxim Naumov and Maya Lathi and Meghan Keneally and Miao Liu and Michael L. Seltzer and Michal Valko and Michelle Restrepo and Mihir Patel and Mik Vyatskov and Mikayel Samvelyan and Mike Clark and Mike Macey and Mike Wang and Miquel Jubert Hermoso and Mo Metanat and Mohammad Rastegari and Munish Bansal and Nandhini Santhanam and Natascha Parks and Natasha White and Navyata Bawa and Nayan Singhal and Nick Egebo and Nicolas Usunier and Nikhil Mehta and Nikolay Pavlovich Laptev and Ning Dong and Norman Cheng and Oleg Chernoguz and Olivia Hart and Omkar Salpekar and Ozlem Kalinli and Parkin Kent and Parth Parekh and Paul Saab and Pavan Balaji and Pedro Rittner and Philip Bontrager and Pierre Roux and Piotr Dollar and Polina Zvyagina and Prashant Ratanchandani and Pritish Yuvraj and Qian Liang and Rachad Alao and Rachel Rodriguez and Rafi Ayub and Raghotham Murthy and Raghu Nayani and Rahul Mitra and Rangaprabhu Parthasarathy and Raymond Li and Rebekkah Hogan and Robin Battey and Rocky Wang and Russ Howes and Ruty Rinott and Sachin Mehta and Sachin Siby and Sai Jayesh Bondu and Samyak Datta and Sara Chugh and Sara Hunt and Sargun Dhillon and Sasha Sidorov and Satadru Pan and Saurabh Mahajan and Saurabh Verma and Seiji Yamamoto and Sharadh Ramaswamy and Shaun Lindsay and Shaun Lindsay and Sheng Feng and Shenghao Lin and Shengxin Cindy Zha and Shishir Patil and Shiva Shankar and Shuqiang Zhang and Shuqiang Zhang and Sinong Wang and Sneha Agarwal and Soji Sajuyigbe and Soumith Chintala and Stephanie Max and Stephen Chen and Steve Kehoe and Steve Satterfield and Sudarshan Govindaprasad and Sumit Gupta and Summer Deng and Sungmin Cho and Sunny Virk and Suraj Subramanian and Sy Choudhury and Sydney Goldman and Tal Remez and Tamar Glaser and Tamara Best and Thilo Koehler and Thomas Robinson and Tianhe Li and Tianjun Zhang and Tim Matthews and Timothy Chou and Tzook Shaked and Varun Vontimitta and Victoria Ajayi and Victoria Montanez and Vijai Mohan and Vinay Satish Kumar and Vishal Mangla and Vlad Ionescu and Vlad Poenaru and Vlad Tiberiu Mihailescu and Vladimir Ivanov and Wei Li and Wenchen Wang and Wenwen Jiang and Wes Bouaziz and Will Constable and Xiaocheng Tang and Xiaojian Wu and Xiaolan Wang and Xilun Wu and Xinbo Gao and Yaniv Kleinman and Yanjun Chen and Ye Hu and Ye Jia and Ye Qi and Yenda Li and Yilin Zhang and Ying Zhang and Yossi Adi and Youngjin Nam and Yu and Wang and Yu Zhao and Yuchen Hao and Yundi Qian and Yunlu Li and Yuzi He and Zach Rait and Zachary DeVito and Zef Rosnbrick and Zhaoduo Wen and Zhenyu Yang and Zhiwei Zhao and Zhiyu Ma},
+      year={2024},
+      eprint={2407.21783},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2407.21783},
+}
+ 
+@misc{GQA,
+      title={GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints},
+      author={Joshua Ainslie and James Lee-Thorp and Michiel de Jong and Yury Zemlyanskiy and Federico Lebrón and Sumit Sanghai},
+      year={2023},
+      eprint={2305.13245},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2305.13245},
+}
+ 
+ 
+@inproceedings{GEMM_GEMV,
+author = {Wilkinson, Finn and Cockrean, Alex and Lin, Wei-Chen and McIntosh-Smith, Simon and Deakin, Tom},
+title = {Assessing the GPU Offload Threshold of GEMM and GEMV Kernels on Modern Heterogeneous HPC Systems},
+year = {2025},
+isbn = {9798350355543},
+publisher = {IEEE Press},
+url = {https://doi.org/10.1109/SCW63240.2024.00188},
+doi = {10.1109/SCW63240.2024.00188},
+abstract = {With an ever-growing compute advantage over CPUs, GPUs are often used in workloads with ample BLAS computation to improve performance. However, several factors including data-to-compute ratio, amount of data re-use, and data structure shape can all impact performance. Hence, using a GPU is not a guarantee of better BLAS performance. In this work, we introduce the GPU BLAS Offload Benchmark (GPU-BLOB), a novel and portable benchmark that measures CPU and GPU compute performance of different BLAS kernels and problem configurations. From the GPU offload threshold (a BLAS kernel's minimum dimensions for a certain configuration where using a GPU is guaranteed to yield improved performance), we evaluate the per-node performance of three, in-production, HPC systems. We show that the offload threshold for GEMM is highly dependant on problem shape and number of consecutive BLAS calls, and that, contrary to conventional wisdom, GEMV can benefit from GPU acceleration, especially on SoC-based systems.},
+booktitle = {Proceedings of the SC '24 Workshops of the International Conference on High Performance Computing, Network, Storage, and Analysis},
+pages = {1481–1495},
+numpages = {15},
+keywords = {AMD MI250X, BLAS, Heterogeneous, High-Performance Computing, Intel Ponte Vecchio, Nvidia Grace-Hopper, Performance},
+location = {Atlanta, GA, USA},
+series = {SC-W '24}
+}
