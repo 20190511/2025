@@ -2,13 +2,13 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: effecient # the website title (if blank, full name will be used instead)
+title: Efficient ML Systems # the website title (if blank, full name will be used instead)
 first_name: My
 middle_name: Blog
 last_name: Blog
 email: qwg724@postech.ac.kr
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Home to the 2025 ICLR Blogposts track
+  Home to the Efficient ML Systems (EECE695E) blog posts
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
