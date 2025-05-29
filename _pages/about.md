@@ -22,7 +22,7 @@ Sungwook Kang and Junhyeong Bae are master's students conducting research at the
 # Our Blogs
 [Optimizing Deep Learning Model Serving On Large-Scale Servers​](https://20190511.github.io/2025/blog/Final)
 
-# [Our Poster](https://github.com/user-attachments/files/20501127/Effecient.ML.Poster.pdf)
+# [Our Poster](https://drive.google.com/file/d/1lVsPxoVV2PiOiWLuvUlK7miNdpnfHxbz/view?usp=drive_link)
 {% include figure.html path="assets/img/organizers/PSAL.png"  class="col-10" %}
 
 # Our Labs in [PSAL](https://www.psal.postech.ac.kr/)
