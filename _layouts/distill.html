@@ -26,8 +26,7 @@
 
     {
       let authorsBibtex = authors.map(e => `${e[0]}, ${e[1]}`).join(" and ");
-      let bibtexTitleShorthand = (firstAuthorLName +
-              "2025" +
+      let bibtexTitleShorthand = ("2025" +
               title.split(" ").slice(0, 3).join("")
       ).replace(" ", "").replace(/[\p{P}$+<=>^`|~]/gu, '').toLowerCase().trim();
       let bibtexTemplate = `
@@ -35,7 +34,7 @@
   author = {${authorsBibtex}},
   title = {${title}},
   abstract = {${description}},
-  booktitle = {ICLR Blogposts 2025},
+  booktitle = {Efficient ML project 2025},
   year = {2025},
   date = {${publishedWhen}},
   note = {${window.location.href}},
