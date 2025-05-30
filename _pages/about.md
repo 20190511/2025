@@ -24,13 +24,3 @@ Sungwook Kang and Junhyeong Bae are master's students conducting research at the
 
 # [Our Poster](https://drive.google.com/file/d/1lVsPxoVV2PiOiWLuvUlK7miNdpnfHxbz/view?usp=drive_link)
 {% include figure.html path="assets/img/organizers/PSAL.png"  class="col-10" %}
-
-# Our Labs in [PSAL](https://www.psal.postech.ac.kr/)
-Our Lab (Parallel System Architecture Laboratory) mission is to advance the state-of-the-art of computing technology and improve the performance and efficiency of systems ranging from high-performance server systems to low-power edge devices. We pursue our goal through innovative computer architecture design along with software optimizations, especially for parallel and scalable systems.
-## Research Areas  
-- Computer architecture
-- Near-data processing
-- Systems for machine learning
-- Memory system
-- GPU computing
-- Large-scale systems
