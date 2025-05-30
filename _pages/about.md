@@ -16,33 +16,39 @@ news: false  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
-# Our Introducement
+# About Us
 Sungwook Kang and Junhyeong Bae are master's students conducting research at the Parallel System Architecture Laboratory (PSAL). Their work focuses on accelerator optimization and networking for high-performance computing (HPC) systems, particularly in data centers handling large-scale data processing workloads such as LLM serving.
 
-# Our Blogs
--  [Optimizing Deep Learning Model Serving On Large-Scale Servers​](https://20190511.github.io/2025/blog/Final)  
+# Research Review Highlights 
+> **Read the Full Blog Post**   
+[Optimizing Deep Learning Model Serving On Large-Scale Servers​](https://20190511.github.io/2025/blog/Final)  
 
-> **what problem is this work trying to tackle?**  
-  [Our Abstract](https://20190511.github.io/2025/blog/Final/#abstract)  
-the memory bottlenecks in LLM inference by addressing the shift from compute-bound GEMM in Prefill to memory-bound GEMV in Decoding, where KV Cache loading becomes a key overhead as context length grows.  
-intra-node communication (between GPU systems) often relies on Ethernet-based connections, which are inherently limited by physical bandwidth and latency constraints  
+> **What problems are these works trying to tackle?**  
+  [Abstract](https://20190511.github.io/2025/blog/Final/#abstract)  
+1. The memory bottlenecks in LLM inference by addressing the shift from compute-bound GEMM in Prefill to memory-bound GEMV in Decoding, where KV Cache loading becomes a key overhead as context length grows.  
+2. Intra-node communication (between GPU systems) often relies on Ethernet-based connections, which are inherently limited by physical bandwidth and latency constraints  
 
-> **what contributions did this work make, and what impact should this work have?**  
-  By analyzing the different computational characteristics of the Prefill (compute-bound) and Decoding (memory-bound) phases in LLMs, this work proposes a specialized accelerator separation strategy and an efficient serving system design with [NeuPIMs](https://20190511.github.io/2025/blog/Final/#neupims) and [PIM is ALL you need](https://20190511.github.io/2025/blog/Final/#pim-is-all-you-need)  
+> **What contributions did these works make, and what impact should these works have?**  
+  1. By analyzing the different computational characteristics of the Prefill (compute-bound) and Decoding (memory-bound) phases in LLMs, this work proposes a specialized accelerator separation strategy and an efficient serving system design with [NeuPIMs](https://20190511.github.io/2025/blog/Final/#neupims) and [PIM is ALL you need](https://20190511.github.io/2025/blog/Final/#pim-is-all-you-need)  
+  2. By addressing the inefficiencies in traditional Ring-AllReduce communication and the sparsity of modern AI models, these works propose SmartNIC-based solutions: [DirectReduce](https://20190511.github.io/2025/blog/Final/#smartnic-for-ring-allreduce) offloads reduction operations to SmartNICs with architectural enhancements to minimize data transfers and host interruptions, while [OmNICCL](https://20190511.github.io/2025/blog/Final/#zero-sparse-allreduce-and-smartnic-offloading) introduces Zero-Sparse AllReduce and a memory-efficient aggregation framework leveraging Direct Cache Access and double buffering. Together, they reduce communication overhead, optimize SmartNIC resource utilization, and improve scalability and efficiency in distributed deep learning.
 
-> **how new is this effort?**
-  1. ["NeuPIMs"](https://20190511.github.io/2025/blog/Final/#neupims)  
+> **How new are these efforts?**
+  1. [NeuPIMs](https://20190511.github.io/2025/blog/Final/#neupims)  
     NeuPIMs enables parallel memory access and decoding GEMV execution with a dual-buffer architecture, overcoming traditional PIM limitations and improving decoding efficiency.
-  2. ["PIM is all you need"](https://20190511.github.io/2025/blog/Final/#pim-is-all-you-need)  
+  2. [PIM is all you need](https://20190511.github.io/2025/blog/Final/#pim-is-all-you-need)  
     power-hungry GPUs/TPUs with an energy-efficient, PIM-centric architecture for LLM serving.  
-  3. ["Network Optimizing with SmartNIC"]() uses SmartNICs to optimize communication overhead between system nodes in distributed deep learning environments  
+  3. [DirectReduce](https://20190511.github.io/2025/blog/Final/#smartnic-for-ring-allreduce)   
+    Introduces a novel design by offloading the reduction operation of Ring-AllReduce directly onto SmartNICs, eliminating host CPU/GPU involvement and reducing unnecessary data movement.
+  4. [OmNICCL](https://20190511.github.io/2025/blog/Final/#zero-sparse-allreduce-and-smartnic-offloading)   
+    Proposes the first integration of Zero-Sparse AllReduce, leveraging sparsity to minimize communication, combined with SmartNIC-based aggregation and memory layout optimizations.
 
->  **what are the limitations of this work?**
+>  **What are the limitations of these works?**
   1. [Operation-Aware Accelerator](https://20190511.github.io/2025/blog/Final/#limitation)  
     With the shift of many LLMs from MHA to GQA, this work faces limitations due to its reliance on GEMV-optimized architectures, which are less efficient for GEMM-based decoding.
-  2. [SmartNICs]()  
+  2. [SmartNICs](https://20190511.github.io/2025/blog/Final/#limitation-of-smartnic)   
+    Current SmartNIC performance and memory limitations cap the effectiveness of both DirectReduce and OmNICCL.
 
-# [Our Poster](https://drive.google.com/file/d/1lVsPxoVV2PiOiWLuvUlK7miNdpnfHxbz/view?usp=drive_link)
+# [Poster Overview](https://drive.google.com/file/d/1lVsPxoVV2PiOiWLuvUlK7miNdpnfHxbz/view?usp=drive_link)
 {% include figure.html path="assets/img/organizers/PSAL.png"  class="col-10" %}
 
 
